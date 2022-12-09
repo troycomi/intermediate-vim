@@ -78,7 +78,7 @@ Overall we have
 vi(             select in parenthesis
 :s/\t/,/gc      substitute each tab for comma and ask first
 ```
-The overall result is the same as `gn` but you are able to examine the result
+The final result is the same as `gn` but you are able to examine the result
 *before* running the command instead of afterwards.  That can be handy over
 multiple lines but in this case I would probably skip the `c` flag altogether.
 
@@ -157,6 +157,27 @@ indent and dedent a line by one tabstop.  While we are on the topic of tabs,
 note that you can also indent in insert mode with `C-t` and reverse with `C-d`.
 Definite life savers in python!
 
+## How about sed?
+With the two substitute solutions, we can come up with a single substitute
+command to do all the work we need.  It could handle indents, but I'll skip
+that as it's hard to write in markdown!
+```
+s/\t/,/g | s/.*/'\0\\n'/
+```
+
+We can do one better by incorporating the edit *when we read the file*.  This
+uses another form of `:r` that will run a command an place the resulting
+stdout into your file.
+
+```
+:r !sed 's/\t/,/g ; s/.*/\'\0\\\n\'/' output.tsv
+```
+Note the slightly different syntax and additional escapes for quotes and newlines.
+This is the best approach when you need to repeat this for many different files,
+but it did take a few iterations to put together!  Also notice how this solution
+built on the other parts.
+
+
 ## Exercise: Keyword arguments to a dict
 Here's another problem you may encounter with unit testing.  Say you have an
 object that you can set with keyword arguments but want to compare to a dict.
@@ -178,3 +199,7 @@ Take a few minutes to try below:
 to_test = MyThing(a=1, b="2", c=[])
 assert to_test.__dict__ ==
 ```
+A few ideas:
+ - copy in parenthesis
+ - substitute to make newlines
+ - block edit or substitute for modifying keys

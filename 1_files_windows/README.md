@@ -63,10 +63,10 @@ it.
 
 A set of windows are contained in a tab.  You can work with tabs with ex commands:
 ```
-tabe <FILE>         open a new tab with file or an empty buffer
-tabe %              open a new tab with current file
-tabc                close this tab
-tabo                close all other tabs
+:tabe <FILE>         open a new tab with file or an empty buffer
+:tabe %              open a new tab with current file
+:tabc                close this tab
+:tabo                close all other tabs
 gt,gT               cycle through tabs
 ```
 The buffer, window, tab model of vim is slightly different than an IDE.  A

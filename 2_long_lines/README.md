@@ -23,11 +23,13 @@ do this:
  - move, copy, put
  - copy into register
  - `:t`  (see also `:m` for moving lines)
-Also set `let &colorcolumn=80` to get an indication of where you are
+
+Also set `:let &colorcolumn=80` to get an indication of where you are
 
 ## Manually
 Move to the 80th character with `80|`, move to the previous space with `F `,
 then replace the space with a newline `r<CR>`.
+
 To undo this operation, you can join the current line with the one below using `J`.
 
 ## Macro

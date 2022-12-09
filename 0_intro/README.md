@@ -125,6 +125,7 @@ You have a couple of options:
  - remap `jk` or `kj` to escape
  - use `C-[`
  - remap escape to caps lock
+
 Until I wrote this section, I was using the caps lock as escape.  Since, I
 mapped caps lock to control then use `C-[`.  It took a little practice, but is
 much nicer for all the other commands you use control for (`C-t` in chrome,
@@ -172,7 +173,7 @@ ways, but they may be slower the first time you have to look it up!
 ## Your new .vimrc
 
 We are going to start with a limited set of vimrc options so we have approximately
-the same minimal, environement
+the same minimal, environment
 ```vim
 "~/.vimrc
 set nocompatible              " be iMproved, required
@@ -184,9 +185,9 @@ syntax on                     " syntax highlighting
 set background=dark
 coloscheme default
 
-set expandtab               "Insert spaces instead of tabs in insert mode. Use spaces for indents"
-set tabstop=4               "Number of spaces that a <Tab> in the file counts for"
-set shiftwidth=4            "Number of spaces to use for each step of (auto)indent"
+set expandtab               "Insert spaces instead of tabs in insert mode. Use spaces for indents
+set tabstop=4               "Number of spaces that a <Tab> in the file counts for
+set shiftwidth=4            "Number of spaces to use for each step of (auto)indent
 set autoindent              "Always set auto-indenting on"
 
 set hlsearch                "highlight search matches
@@ -194,7 +195,7 @@ set incsearch               "highlight while typing
 
 set hidden                  "allow modified buffers to hide
 
-set number relativenumber   "Display line numbers"
+set number relativenumber   "Display line numbers
 set nowrap                  "Do not wrap long lines
 nnoremap <Up> <nop>         "disable arrow keys
 nnoremap <Down> <nop>

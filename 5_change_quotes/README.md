@@ -15,7 +15,7 @@ Use `:w` to write a file
 ```
 
 ## Just do it
-In the last example, there's nothing wrong with moving your cursor, using `i``
+In the last example, there's nothing wrong with moving your cursor, using ``i` ``
 moving it again, and maybe using a `.`.  By the time you come up with something
 else, you'd be done with the edit anyways!
 
@@ -48,7 +48,7 @@ braces, but you need a different macro for each.
 Macros can be saved into your vimrc so they are always available at startup.
 For the bracket example, you can put the following in your vimrc:
 ```
-let @b="yi[ca[{^r0}"
+let @b="yi[ca[{0}"
 ```
 I think this is best used for the last example:
 ```
@@ -61,4 +61,4 @@ Here we can use the unnamed register as there are no existing quotes.
 ## Plugin
 I won't cover how to install plugins, but when you are ready, the
 [vim-surround](https://github.com/tpope/vim-surround) plugin solves this nicely
-and plays well with the `.` command. (use `gx` to go to a url)
+and plays well with the `.` command. (use `gx` to go to a url in a file)

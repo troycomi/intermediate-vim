@@ -41,8 +41,10 @@ gv      Reselect bloc visual
 move to the second entry
 gC-a    increment as a counter
 ```
-Of note with C-a, the cursor will move to the first number on the line. C-x
-decrements and you can add a count to do some simple math (2+3 -> 2 3C-a).
+Try it!
+
+Of note with `C-a`, the cursor will move to the first number on the line. `C-x`
+decrements and you can add a count to do some simple math (2+3 -> 2 `3C-a`).
 If you need more math operations, you can use `C-r=` to evaluate simple operations
 and vim expressions.
 
@@ -61,8 +63,8 @@ The value of this approach is it's easy to make X copies by running `X@q`.
 If each line builds on the last, you alternate `@q`, edit, repeat.  The downside
 is it only increments the first number in each line.
 You can add it to your `.vimrc`:
-```
-let @i='yyp'
+```vim
+let @i='yyp'  " the missing character is C-a.  To add in, use C-vC-a.
 ```
 so `@i` always increments.
 
@@ -71,3 +73,5 @@ This is similar to the numbered list example.  You yank the line, use `#p` to
 make however many copies you want, then block select the numbers and `gC-a`.
 The advantage is it doesn't occupy a register and you can increment anywhere
 in the line.  Things are more challenging if each line builds on the last.
+
+Try one method to fill in the missing assert lines.

@@ -26,6 +26,7 @@ block replace separator between columns
 yypVr-              add in horizontal ruler
 Block copy and space to adjust spacing, try using o and O to move corners
 ```
+Try it yourself and we will go over a solution.
 
 ## Boarders
 Personally I dislike having decoration in source code as it just wastes disk
@@ -46,3 +47,4 @@ pad to 80 characters
 make top and bottom rows
 make columns
 ```
+Pick one to make a decorated table below.
