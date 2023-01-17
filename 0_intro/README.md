@@ -58,15 +58,27 @@ v           normal  ->  visual
 ESC         ANY     ->  normal
 ```
 
+Because you frequently need to move from normal to insert mode, there are
+multiple variants to accelerate some common edits:
+```
+i           insert "behind" cursor
+I           insert at begining of line
+a           insert "ahead of" cursor
+A           insert at end of line
+o           insert as a newline below cursor
+O           insert as a newline above cursor
+```
+
 And most of the rest edit text, these are called operators
 ```
 d           delete
-c           change
+c           change; go to insert mode
 r           replace
 y           yank
 p           paste (or put)
-s           substitute
+s           substitute one character, like cl
 x           delete one character
+u           undo, VERY handy
 ```
 
 Each operator can be combined with a movement to act exactly where you need,
@@ -93,7 +105,7 @@ Each motion can be combined with a count, for example:
 d3w         delete 3 words
 3dw         delete 3 words
 3yy         yank 3 lines
-3p          put the same line 3 times
+3p          put the register contents 3 times
 ```
 
 Instead of a motion, you can use a search command or text objects.  Text objects
@@ -207,3 +219,19 @@ numbering is a great way to assist with multiline commands and jumps.
 
 If you want to improve your usage of `#j` and other movement commands, I highly
 recommend slowing key repeat and increasing repeat delay in your OS!
+
+### Adding common abbreviations
+Another handy collection of commands to add to your vimrc are are abbreviations.
+In insert mode, you can use abbreviations as substitutions for long phrases,
+common misspellings, or frequent code constructs.  Note that if you want to use
+abbreviations for something like a function declaration or a for loop, you should
+look into a snippet plugin.  Snippets behave like abbreviations, but allow you
+to fill in parts of the expanded text, e.g. function name, arguments, etc.
+
+Here are some example abbreviations for your vimrc:
+```vim
+abbreviate teh the  " common misspelling
+" long or common phrases
+abbreviate PUaddr Princeton University. Princeton, NJ 08544
+abbreviate const public static final int
+```
