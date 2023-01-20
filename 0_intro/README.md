@@ -50,7 +50,7 @@ m<c>,`<c>       mark location as `c`, recall it
 z[z,-,enter]    move window so curser is in the middle, bottom, top
 ```
 
-Moving between modes are also a keypress away:
+Moving between modes is also a keypress away:
 ```
 i,a,o,etc   normal  ->  insert
 v           normal  ->  visual
@@ -71,14 +71,14 @@ O           insert as a newline above cursor
 
 And most of the rest edit text, these are called operators
 ```
-d           delete
-c           change; go to insert mode
 r           replace
-y           yank
-p           paste (or put)
 s           substitute one character, like cl
 x           delete one character
 u           undo, VERY handy
+d           delete
+c           change; go to insert mode
+y           yank
+p           paste (or put)
 ```
 
 Each operator can be combined with a movement to act exactly where you need,
@@ -195,7 +195,7 @@ syntax on                     " syntax highlighting
 
 " highly recommend getting a better colorscheme too!
 set background=dark
-coloscheme default
+colorscheme default
 
 set expandtab               "Insert spaces instead of tabs in insert mode. Use spaces for indents
 set tabstop=4               "Number of spaces that a <Tab> in the file counts for
@@ -209,10 +209,10 @@ set hidden                  "allow modified buffers to hide
 
 set number relativenumber   "Display line numbers
 set nowrap                  "Do not wrap long lines
-nnoremap <Up> <nop>         "disable arrow keys
-nnoremap <Down> <nop>
-nnoremap <Right> <nop>
-nnoremap <Left> <nop>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Left> <Nop>
 ```
 Some additions may be recommended but this will be a good start.  Relative
 numbering is a great way to assist with multiline commands and jumps.
