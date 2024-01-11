@@ -49,7 +49,7 @@ N           move to a search backwards
 > __Exercise 3__: 
 > What if you started here [x] and
 > somehow needed to make your way
-> all the way towards the right to get here [y]?
+> all the way towards the end of this line to get here [y]?
 
 Moves can also be much larger
 ```
@@ -95,11 +95,13 @@ y           yank
 p           paste (or put)
 ```
 
-Exercise 4:
-
-    Fx the typo on this line by going into insert mode
-    Fixx the typo on this line using x
-    Fix this line by adding the missing letter
+> __Exercise 4__:
+>
+>    Fx the typo on this line by going into insert mode
+>
+>    Fixx the typo on this line using x
+>
+>    Fix this line by adding the missing letter
 
 Undoing and redoing are very common operations
 ```
@@ -107,9 +109,7 @@ u           undo
 C-r         redo
 ```
 
-Exercise 5:
-
-    Undo the previous change you made then redo it
+> __Exercise 5__: Undo the previous change you made then redo it
 
 Each operator can be combined with a movement to act exactly where you need,
 for example, here are some delete variants:
@@ -138,11 +138,13 @@ d3w         delete 3 words
 3p          put the register contents 3 times
 ```
 
-Exercise 6:
-
-    Delete the next 3 words vim is lame to fix this line
-    This line is lame too, you should probably delete it
-    But this line is great, in fact you should copy it
+> __Exercise 6__:
+>
+> Delete the next 3 words VIM IS LAME to fix this line
+>
+> This line is lame too, you should probably delete it
+>
+> But this line is great, in fact you should yank and paste it
 
 Instead of a motion, you can use a search command or text objects.  Text objects
 are represented by `i` or `a` and the surrounding object
@@ -157,10 +159,11 @@ You don't even need to be on the object, just in front of it or on the same line
 So `ci"` can replace `f"lct"`.  As a bonus, text objects work better with the dot
 command.
 
-Exercise 7:
-
-    Translate the quoted word to english "hola"
-    This function should take arguments: def foo(bar, baz)
+> __Exercise 7__:
+>
+> Translate the quoted word to english "hola"
+>
+> This function should take arguments: def foo(bar, baz)
 
 Some meta-commands are just handy enough they become muscle memory:
 ```
@@ -223,14 +226,14 @@ craft operations faster the breakpoint for using a macro or regex will shift.
 My cutoff is around 10 repetitions; just be aware that there are always better
 ways, but they may be slower the first time you have to look it up!
 
-Exercise 8:
+> __Exercise 8__:
+> 
+> Try removing the extraaaaaa using x a few times and then undoing it
+> 
+> Now try removing the extra using de and then undoing it
 
-    Try removing the extraaaaaa using x and then undoing it
-    Now try removing the extraaaaaa using de and then undoing it
-
-Exercise 9:
-
-    DeleTe eveRy worD on This liNe that haS A capital leTter
+> __Exercise 9__:
+>     DeleTe eveRy worD on This liNe that haS A capital leTter
 
 ### Adding common abbreviations to your .vimrc
 Another handy collection of commands to add to your vimrc are are abbreviations.
@@ -254,16 +257,27 @@ abbreviate const public static final int
 
 Here are some additional exercises that you can use to practice the movement and operator commands introduced above.
 
-Exercise 10: 
+> __Exercise 10__: 
+>
+> python_dict = {
+>     'a': 1,
+>     'b': 3,
+> } #delete this comment using % to move between brackets
 
-    python_dict = {
-        'a': 1,
-        'b': 3,
-    } #delete this comment using % to move between brackets
 
+> __Exercise 11__: `my_var` is accidentally being overwritten on the third line below. Position your cursor over `my_var` on the first line then use `#` to search for the next occurrence of `my_var`. Delete the line that overwrites `my_var` using `dd`.
+> 
+>     my_var = 17
+>     other_var = 3
+>     my_var = 'oops I shouldnt be overwriting this'
 
-Exercise 11: `my_var` is accidentally being overwritten on the third line below. Position your cursor over `my_var` on the first line then use `#` to search for the next occurrence of `my_var`. Delete the line that overwrites `my_var` using `dd`.
-
-    my_var = 17
-    other_var = 3
-    my_var = 'oops I shouldnt be overwriting this'
+> __Exercise 12__:
+> This line and the next line are separated by an empty line
+> 
+> It's true, there's an empty line above.
+> It would be nice if all the other lines also had a separating line
+> that would make the lines easier to read
+> and it shouldn't be too hard to do by yanking the empty line
+> pasting it where required and then moving down to the next line
+> and finally using the dot commadand `.` to repeat it as much
+> as is necessary to get it all done

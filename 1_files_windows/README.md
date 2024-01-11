@@ -64,10 +64,11 @@ to `:sp` or `:vs` to open a new file in a split.  Opening the same buffer is
 handy for large files or when you need to look at an implementation while using
 it.
 
-Exercise 1:
-
-    Make a vertical split using :vs then try deleting THIS word 
-    It should update in both windows! Then C-wo to close the vertical split
+> __Exercise 1__:
+>
+>    Make a vertical split using :vs then try deleting THIS word 
+>
+>    It should update in both windows! Then C-wo to close the vertical split
 
 A set of windows are contained in a tab.  You can work with tabs with ex commands:
 ```
@@ -78,12 +79,15 @@ A set of windows are contained in a tab.  You can work with tabs with ex command
 gt,gT                cycle through tabs
 ```
 
-Exercise 2:
-
-    Make a new tab of file1.txt using `:tabe file1.txt`
-    Then follow the directions there, go ahead and do that now.
-    After you end up back here use gT to go back one more time!
-    Phew, welcome back
+> __Exercise 2__:
+>
+>  Make a new tab of file1.txt using `:tabe file1.txt`
+>
+>  Then follow the directions there, go ahead and do that now.
+>
+>  After you end up back here use gT to go back one more time!
+>
+>  Phew, welcome back
 
 The buffer, window, tab model of vim is slightly different than an IDE.  A
 tab is a collection of windows.  A window is a view on a buffer. A buffer is

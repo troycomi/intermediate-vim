@@ -48,19 +48,20 @@ decrements and you can add a count to do some simple math (2+3 -> 2 `3C-a`).
 If you need more math operations, you can use `C-r=` to evaluate simple operations
 and vim expressions.
 
-
- 1) Iron Man
- 2) The Incredible Hulk
- 3) Iron Man 2
- 4) Thor
- 5) Captain America: The First Avenger
- 6) The Avengers
- 7) Iron Man 3
- 8) Thor: The Dark World
- 9) Captain America: The Winter Soldier
- 10) Guardians of the Galaxy
- 11) Avengers: Age of Ultron
-
+```
+ - Iron Man                            
+ - The Incredible Hulk                 
+ - Iron Man 2                          
+ - Thor                                
+ - Captain America: The First Avenger  
+ - The Avengers                        
+ - Iron Man 3                          
+ - Thor: The Dark World                
+ - Captain America: The Winter Soldier 
+ - Guardians of the Galaxy             
+ - Avengers: Age of Ultron             
+```
+                                      
 ## Copy with increment
 When writing unit tests, I will sometimes have to assert the value of a list
 of values, such as:

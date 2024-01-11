@@ -11,30 +11,30 @@ to how you would edit text in a word processor.  To enter visual mode, press
 selected. You can then use `d` to delete the selected text, `y` to yank it,
 or `c` to change it, just like in normal mode. 
 
-Exercise 1:
-
-    Enter visual mode to highlight THIS word (vaw) then delete it
-
-    Enter visual mode and select from HERE to the end of the line (v$) and yank it
-    Paste the yanked text below this line (p)
+> __Exercise 1__:
+>
+> Enter visual mode to highlight THIS word (vaw) then delete it
+>
+> Enter visual mode and select from HERE to the end of the line (v$) and yank it
+> then paste the yanked text below this line (p)
 
 ## Introducing visual line mode
 
 Visual line mode is similar to visual mode, but selects whole lines at a time. That's pretty much it. You can enter visual line mode with `V` in normal mode.
 
-Exercise 2:
-
-    Enter visual line mode and select all 3 lines
-    Yank the selected lines
-    Paste them once, what happened? Try P instead of p
+> __Exercise 2__:
+>
+> Enter visual line mode and select all 3 lines.
+> Yank the selected lines.
+> Paste them once, what happened? Try P instead of p.
 
 ## Introducing visual block mode
 
 Visual block mode is similar to visual mode, but selects a rectangular block of text. You can enter visual block mode with `C-v` in normal mode. You can then move the cursor around to select text. You can even use `o` to take control of the opposite corner of the block.
 
-Exercise 3:
+    Exercise 3:
 
-    Enter visual block mode and highlight the entire grid below,
+    Enter visual block mode and highlight the entire grid below.
     Next try highlighting just the 2nd column.
     Finally try deleting the 3rd column.
 
