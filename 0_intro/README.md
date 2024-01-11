@@ -101,7 +101,7 @@ p           paste (or put)
 >
 >    Fixx the typo on this line using x
 >
->    Fix this line by adding the missing letter
+>    Fix this line by adding the missing lette
 
 Undoing and redoing are very common operations
 ```
