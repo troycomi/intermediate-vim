@@ -40,23 +40,16 @@ N           move to a search backwards
 *           search for the word under the cursor backwards
 ```
 
-Exercise 1:
-    
-    Try putting your cursor here [x] and then move to here [y]
+> __Exercise 1__:
+> Try putting your cursor here [x] and then move to here [y]
 
-Exercise 2: 
+> __Exercise 2__: 
+> Try to get here [y] starting from here [x]
 
-    What if you ended here [y] starting from here [x]?
-
-Exercise 3: 
-
-    What if you started all the way up here [x] and
-    somehow needed to make your way
-    all
-    the
-    way
-    down
-    here [y]?
+> __Exercise 3__: 
+> What if you started here [x] and
+> somehow needed to make your way
+> all the way towards the right to get here [y]?
 
 Moves can also be much larger
 ```
