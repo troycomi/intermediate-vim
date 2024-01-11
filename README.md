@@ -1,3 +1,5 @@
+Open this file in vi then follow along by using "j" to move down.
+
 # Intermediate vim
 
 Vim is one of my favorite tools, which is an odd thing to write about a text
@@ -50,11 +52,60 @@ You need to have vim installed.  While there shouldn't be any version-specific
 information, we will be using vim, version 8, which is installed on most RC
 systems.
 
-First, if you have a `.vimrc`, move it so we can all start fresh:
+
+# Setting up your new .vimrc
+
+We are going to start with a limited set of vimrc options so we have approximately
+the same minimal, environment
+```vim
+"~/.vimrc
+set nocompatible              " be iMproved, required
+filetype plugin indent on     " required
+set laststatus=2              " Always show the statusline
+syntax on                     " syntax highlighting
+
+" highly recommend getting a better colorscheme too!
+set background=dark
+colorscheme default
+
+set expandtab               "Insert spaces instead of tabs in insert mode. Use spaces for indents
+set tabstop=4               "Number of spaces that a <Tab> in the file counts for
+set shiftwidth=4            "Number of spaces to use for each step of (auto)indent
+set autoindent              "Always set auto-indenting on"
+
+set hlsearch                "highlight search matches
+set incsearch               "highlight while typing
+
+set hidden                  "allow modified buffers to hide
+
+set number                  "Display line numbers
+"set number relativenumber  "Display line numbers in relative positions
+set nowrap                  "Do not wrap long lines
+"nnoremap <Up> <Nop>
+"nnoremap <Down> <Nop>
+"nnoremap <Right> <Nop>
+"nnoremap <Left> <Nop>
+
+"Jump to the last pos from previous file opening
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+"Type jk in succession to go from insert to normal mode (to avoid ESC)
+":imap jk <Esc>
 ```
-mv ~/.vimrc ~/.vimrc.bak
-```
-We will cover a basic config in the next section
+
+Some additions may be recommended but this will be a good start. Relative numbering is a great way to assist with multiline commands and jumps, but I've turned it off for now.  If you want to improve your usage of `#j` and other movement commands, I highly
+recommend slowing key repeat and increasing repeat delay in your OS!
+
+
+To make this your vimrc, first back up your current one with:
+
+```mv ~/.vimrc ~/.vimrc.bak```
+
+then copy the included vimrc to `~/.vimrc` with:
+
+```cp class_vimrc.txt ~/.vimrc```
+
+If you are using a different OS, you may have a different location for your vimrc, but it should be in your home directory.
 
 ## Contents
 
@@ -62,3 +113,4 @@ After covering some basics, we will work through several example editing tasks
 to introduce solutions at several levels.  Often, the fastest way to edit a
 single line is not the fastest to edit 10 lines and a different solution is
 required for 1000 lines.
+

@@ -30,13 +30,34 @@ h,j,k,l     move cursor by one space
 w,e,b       move by a word
 t,f         move forward to a character
 n,;,,       move to a search or character match
+#           search for the word under the cursor
 ```
 Shift with each of these produces a similar movement
 ```
 W,E,B       move by a WORD
 T,F         move backward to a character
 N           move to a search backwards
+*           search for the word under the cursor backwards
 ```
+
+Exercise 1:
+    
+    Try putting your cursor here [x] and then move to here [y]
+
+Exercise 2: 
+
+    What if you ended here [y] starting from here [x]?
+
+Exercise 3: 
+
+    What if you started all the way up here [x] and
+    somehow needed to make your way
+    all
+    the
+    way
+    down
+    here [y]?
+
 Moves can also be much larger
 ```
 }               move to the next blank line
@@ -81,6 +102,22 @@ y           yank
 p           paste (or put)
 ```
 
+Exercise 4:
+
+    Fx the typo on this line by going into insert mode
+    Fixx the typo on this line using x
+    Fix this line by adding the missing letter
+
+Undoing and redoing are very common operations
+```
+u           undo
+C-r         redo
+```
+
+Exercise 5:
+
+    Undo the previous change you made then redo it
+
 Each operator can be combined with a movement to act exactly where you need,
 for example, here are some delete variants:
 ```
@@ -108,6 +145,12 @@ d3w         delete 3 words
 3p          put the register contents 3 times
 ```
 
+Exercise 6:
+
+    Delete the next 3 words vim is lame to fix this line
+    This line is lame too, you should probably delete it
+    But this line is great, in fact you should copy it
+
 Instead of a motion, you can use a search command or text objects.  Text objects
 are represented by `i` or `a` and the surrounding object
 ```
@@ -120,6 +163,11 @@ c/cat<enter>    change to the first instance of "cat"
 You don't even need to be on the object, just in front of it or on the same line!
 So `ci"` can replace `f"lct"`.  As a bonus, text objects work better with the dot
 command.
+
+Exercise 7:
+
+    Translate the quoted word to english "hola"
+    This function should take arguments: def foo(bar, baz)
 
 Some meta-commands are just handy enough they become muscle memory:
 ```
@@ -182,45 +230,16 @@ craft operations faster the breakpoint for using a macro or regex will shift.
 My cutoff is around 10 repetitions; just be aware that there are always better
 ways, but they may be slower the first time you have to look it up!
 
-## Your new .vimrc
+Exercise 8:
 
-We are going to start with a limited set of vimrc options so we have approximately
-the same minimal, environment
-```vim
-"~/.vimrc
-set nocompatible              " be iMproved, required
-filetype plugin indent on     " required
-set laststatus=2              " Always show the statusline
-syntax on                     " syntax highlighting
+    Try removing the extraaaaaa using x and then undoing it
+    Now try removing the extraaaaaa using de and then undoing it
 
-" highly recommend getting a better colorscheme too!
-set background=dark
-colorscheme default
+Exercise 9:
 
-set expandtab               "Insert spaces instead of tabs in insert mode. Use spaces for indents
-set tabstop=4               "Number of spaces that a <Tab> in the file counts for
-set shiftwidth=4            "Number of spaces to use for each step of (auto)indent
-set autoindent              "Always set auto-indenting on"
+    DeleTe eveRy worD on This liNe that haS A capital leTter
 
-set hlsearch                "highlight search matches
-set incsearch               "highlight while typing
-
-set hidden                  "allow modified buffers to hide
-
-set number relativenumber   "Display line numbers
-set nowrap                  "Do not wrap long lines
-nnoremap <Up> <Nop>
-nnoremap <Down> <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Left> <Nop>
-```
-Some additions may be recommended but this will be a good start.  Relative
-numbering is a great way to assist with multiline commands and jumps.
-
-If you want to improve your usage of `#j` and other movement commands, I highly
-recommend slowing key repeat and increasing repeat delay in your OS!
-
-### Adding common abbreviations
+### Adding common abbreviations to your .vimrc
 Another handy collection of commands to add to your vimrc are are abbreviations.
 In insert mode, you can use abbreviations as substitutions for long phrases,
 common misspellings, or frequent code constructs.  Note that if you want to use
@@ -230,8 +249,28 @@ to fill in parts of the expanded text, e.g. function name, arguments, etc.
 
 Here are some example abbreviations for your vimrc:
 ```vim
-abbreviate teh the  " common misspelling
+" common misspelling
+abbreviate teh the
+
 " long or common phrases
 abbreviate PUaddr Princeton University. Princeton, NJ 08544
 abbreviate const public static final int
 ```
+
+### Extra moving and editing exercises
+
+Here are some additional exercises that you can use to practice the movement and operator commands introduced above.
+
+Exercise 10: 
+
+    python_dict = {
+        'a': 1,
+        'b': 3,
+    } #delete this comment using % to move between brackets
+
+
+Exercise 11: `my_var` is accidentally being overwritten on the third line below. Position your cursor over `my_var` on the first line then use `#` to search for the next occurrence of `my_var`. Delete the line that overwrites `my_var` using `dd`.
+
+    my_var = 17
+    other_var = 3
+    my_var = 'oops I shouldnt be overwriting this'
