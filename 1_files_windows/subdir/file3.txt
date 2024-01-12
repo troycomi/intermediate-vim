@@ -1,1 +1,1 @@
-subdir 3
+Welcome to file3 in the subdir

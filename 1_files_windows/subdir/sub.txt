@@ -1,1 +1,1 @@
-sub file
+This is sub.txt in the subdir

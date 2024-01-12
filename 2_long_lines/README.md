@@ -6,7 +6,13 @@ automatic line wrapping leads to lines of code that go on forever:
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
 
-Pop quiz, how can we move the cursor to the end of this long line?
+> __Pop quiz__
+>
+> How can we move the cursor to the end of this long line?
+>
+> Once you are there, how can you move to the beginning of the line?
+>
+> From the beginning of the line, how can you move to the end of the first sentence?
 
 
 How do we make the output something that is easy to read in the terminal and

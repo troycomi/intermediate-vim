@@ -281,3 +281,17 @@ Here are some additional exercises that you can use to practice the movement and
 > pasting it where required and then moving down to the next line
 > and finally using the dot commadand `.` to repeat it as much
 > as is necessary to get it all done
+
+> __Exercise 13__: Sometimes I'll have a shell command in a `.sh` file that is really long like this one:
+> 
+> samtools view -f 3 -F 3584 -L chr1.bed -o filtered_reads.sam -U removed_reads.sam mouse_reads.bam
+> 
+> but it would be much nicer if it were broken up into multiple lines like this:
+>
+> samtools view \
+>   -f 3 \
+>   -F 3584 \
+>   -L chr1.bed \
+>   -o filtered_reads.sam \
+>   -U removed_reads.sam \
+>   mouse_reads.bam

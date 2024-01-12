@@ -26,7 +26,7 @@ Now to open files:
 :e                  reopen this file, useful to sync with disk
 :e!                 reopen this file, discard any buffer changes
 :e <FILE>           open the file in this window, original buffer is open but hidden
-:find <FILE>        find a file in path and edit it
+:find <FILE>        find a file in path and edit it (works with tab completion)
 
 :pwd                current working directory
 :cd <DIR>           change current directory
@@ -66,9 +66,13 @@ it.
 
 > __Exercise 1__:
 >
->    Make a vertical split using :vs then try deleting THIS word 
+>    Make a vertical split of this buffer using :vs then try deleting word 
 >
 >    It should update in both windows! Then C-wo to close the vertical split
+
+> __Exercise 2__:
+>
+>    Make a horizontal split of file2.txt using :sp file2.txt
 
 A set of windows are contained in a tab.  You can work with tabs with ex commands:
 ```
@@ -79,7 +83,7 @@ A set of windows are contained in a tab.  You can work with tabs with ex command
 gt,gT                cycle through tabs
 ```
 
-> __Exercise 2__:
+> __Exercise 3__:
 >
 >  Make a new tab of file1.txt using `:tabe file1.txt`
 >
@@ -93,3 +97,27 @@ The buffer, window, tab model of vim is slightly different than an IDE.  A
 tab is a collection of windows.  A window is a view on a buffer. A buffer is
 an in-memory view of a file.  Once you have a window you can change it to any
 buffer.
+
+## Multiple files and reading from stdin
+
+You can open multiple files at once with vim from the command line using
+wildcards such as `vi *.txt`. By default, this does not open each file in a
+separate tab, and instead you can move from one file to the next with :n or :N.
+You can also use `:tab all` to open each buffer in a separate tab.
+
+You can also read from stdin with vim.  I find this is useful when you
+want to concatenate a bunch of files together and then edit them.  For
+example `cat *.txt | vi -`.
+
+## Saving your commands to a file
+
+If you'd like, you can have vim write a file of all the commands you
+issued in your last session, by using `vi -w commands.txt file3.txt`.
+I haven't used this much, but it allows you to count your keystrokes
+if you're into that sort of thing. Go ahead and try it now!
+
+Once you `:wq` out of vim, you can use `wc -c commands.txt` to count the
+number of characters in the file.  You can also view the file with `vi commands.txt`
+
+You can also repeat the commands from the file by using `vi -s commands.txt other_file.txt.`
+but I haven't found a good use for this.

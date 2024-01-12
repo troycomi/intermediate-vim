@@ -1,1 +1,13 @@
-file 3
+Welcome to file 3
+
+If you got to this file by issuing the `vi -W commands.txt file3.txt`
+then vim is currently listening to everything you're typing!
+
+How about as a little exercise, try to fix this next paragraph
+using as few commands as possible:
+
+    Here's a tyypo, I think it's the only one in this paragraph,
+    but there are some entire words that shouldn't be present REMOVEMEPLEASE.
+    Also I meant to write the word 'and' instead of 'but' when I
+    write that vim is interesting but cool.
+
