@@ -30,14 +30,14 @@ h,j,k,l     move cursor by one space
 w,e,b       move by a word
 t,f         move forward to a character
 n,;,,       move to a search or character match
-#           search for the word under the cursor
+*           search for the word under the cursor forwards
 ```
 Shift with each of these produces a similar movement
 ```
 W,E,B       move by a WORD
 T,F         move backward to a character
 N           move to a search backwards
-*           search for the word under the cursor backwards
+#           search for the word under the cursor backwards
 ```
 
 > __Exercise 1__:

@@ -12,7 +12,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > Once you are there, how can you move to the beginning of the line?
 >
-> From the beginning of the line, how can you move to the end of the first sentence?
+> From the beginning of the line, how can you move to period at the end of the first sentence?
 
 
 How do we make the output something that is easy to read in the terminal and

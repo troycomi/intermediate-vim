@@ -1,4 +1,4 @@
-Open this file in vi then follow along by using "j" to move down.
+Open this file in vi then follow along by using `j` to move down.
 
 # Intermediate vim
 
@@ -55,57 +55,31 @@ systems.
 
 # Setting up your new .vimrc
 
+Your ~/.vimrc file is where you can add personal configurations to vim.
 We are going to start with a limited set of vimrc options so we have approximately
-the same minimal, environment
-```vim
-"~/.vimrc
-set nocompatible              " be iMproved, required
-filetype plugin indent on     " required
-set laststatus=2              " Always show the statusline
-syntax on                     " syntax highlighting
+the same minimal, environment.
 
-" highly recommend getting a better colorscheme too!
-set background=dark
-colorscheme default
-
-set expandtab               "Insert spaces instead of tabs in insert mode. Use spaces for indents
-set tabstop=4               "Number of spaces that a <Tab> in the file counts for
-set shiftwidth=4            "Number of spaces to use for each step of (auto)indent
-set autoindent              "Always set auto-indenting on"
-
-set hlsearch                "highlight search matches
-set incsearch               "highlight while typing
-
-set hidden                  "allow modified buffers to hide
-
-set number                  "Display line numbers
-"set number relativenumber  "Display line numbers in relative positions
-set nowrap                  "Do not wrap long lines
-"nnoremap <Up> <Nop>
-"nnoremap <Down> <Nop>
-"nnoremap <Right> <Nop>
-"nnoremap <Left> <Nop>
-
-"Jump to the last pos from previous file opening
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-
-"Type jk in succession to go from insert to normal mode (to avoid ESC)
-":imap jk <Esc>
-```
-
-Some additions may be recommended but this will be a good start. Relative numbering is a great way to assist with multiline commands and jumps, but I've turned it off for now.  If you want to improve your usage of `#j` and other movement commands, I highly
+Some additions may be recommended but this will be a good start. 
+Relative numbering is a great way to assist with multiline commands and jumps, but I've turned it off for now.
+If you want to improve your usage of `#j` and other movement commands, I highly
 recommend slowing key repeat and increasing repeat delay in your OS!
 
 
-To make this your vimrc, first back up your current one with:
+To make this your vimrc, first back up your current one (if you have one) with:
 
 ```mv ~/.vimrc ~/.vimrc.bak```
 
-then copy the included vimrc to `~/.vimrc` with:
+Depending on your OS, you may have a different location for your vimrc or you might not have a ~/.vimrc at all
+in which case the `mv` command will fail, which is ok.
+
+next copy the included vimrc to `~/.vimrc` with:
 
 ```cp class_vimrc.txt ~/.vimrc```
 
-If you are using a different OS, you may have a different location for your vimrc, but it should be in your home directory.
+After you've made run these two commands, try to open your .vimrc in vim (inception?)
+and take a look at the different settings
+
+```vi ~/.vimrc```
 
 ## Contents
 

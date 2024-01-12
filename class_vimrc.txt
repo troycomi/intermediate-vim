@@ -1,4 +1,5 @@
 "~/.vimrc
+"THIS IS THE CLASS VIMRC
 set nocompatible              " be iMproved, required
 filetype plugin indent on     " required
 set laststatus=2              " Always show the statusline
@@ -18,9 +19,11 @@ set incsearch               "highlight while typing
 
 set hidden                  "allow modified buffers to hide
 
-set number                  "Display line numbers
+set number                  "Display line numbers incrementing
 "set number relativenumber  "Display line numbers in relative positions
 set nowrap                  "Do not wrap long lines
+
+"Uncomment the next 4 lines to disable the arrow-keys if you'd like
 "nnoremap <Up> <Nop>
 "nnoremap <Down> <Nop>
 "nnoremap <Right> <Nop>
