@@ -82,7 +82,7 @@ Try it starting with this line
 assert line[0] == "blah"
 ```
 
-You can add it to your `.vimrc`:
+If you end up using this macro often you can add it to your `.vimrc`:
 ```vim
 let @i='yyp'  " the missing character is C-a.  To add in, use C-vC-a.
 ```

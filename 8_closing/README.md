@@ -2,7 +2,7 @@
 
 I hope you've learned a few tricks to start expanding your vim repertoire.
 You won't use everything right away, but pick your favorite one or two and see
-if you can make it muscle memory.  Come back, pick another, and repeat.
+if you can make it muscle memory. **Come back, pick another, and repeat**.
 
 To get better at anything, you have to have the curiosity to seek out new ideas
 or methods and the willingness to practice and improve.  If you spend most of

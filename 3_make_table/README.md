@@ -26,7 +26,15 @@ Visual line mode is similar to visual mode, but selects whole lines at a time. T
 >
 > Enter visual line mode and select all 3 lines.
 > Yank the selected lines.
-> Paste them once, what happened? Try P instead of p.
+> Paste them once, what happened? Undo and try P instead of p.
+
+
+> __Exercise 2.5__:
+>
+> oH NO! tHE UPPER/LOWER CASE. iT IS COMPLETELY SWAPPED!
+>
+> Fix the above line by entering visual line mode and selecting
+> the line, then pressing `~` to swap the case of the line.
 
 ## Introducing visual block mode
 
@@ -98,14 +106,16 @@ It can be helpful to use `:let &colorcolumn=80` to guide your work
 
 Try centering the following 3 lines to replicate the table below
 
-this row
-is another row
-and this one is even long
+Whole seasons are spent
+Mastering the form, the style.
+None calls it easy.
 
 
 Here's what the centered header could look like:
-|------------------------------------------------------------------------------|
-|                                   this row                                   |
-|                                is another row                                |
-|                          and this one is even long                           |
-|------------------------------------------------------------------------------|
+```
+--------------------------------------------------------------------------------
+|                           Whole seasons are spent                            |
+|                        Mastering the form, the style.                        |
+|                             None calls it easy.                              |
+--------------------------------------------------------------------------------
+```
