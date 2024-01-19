@@ -8,8 +8,8 @@ buffers and windows.
 ## Opening and Saving Files
 When you open a file and start editing it, those changes are kept in memory in
 a buffer.  Only once you save those changes is the new version written to disk.
-You can also open a new file and the original file is kept in a buffer (by default).
-Let's start with commands for saving:
+You can also open a new file and the original file is kept in a buffer 
+(by default). Let's start with commands for saving:
 ```
 :w[rite]            write the file
 :wa[ll]             write all open buffers
@@ -74,7 +74,8 @@ it.
 >
 >    Make a horizontal split of file2.txt using :sp file2.txt
 
-A set of windows are contained in a tab.  You can work with tabs with ex commands:
+A set of windows are contained in a tab.
+You can work with tabs with ex commands:
 ```
 :tabe <FILE>         open a new tab with file or an empty buffer
 :tabe %              open a new tab with current file
@@ -104,8 +105,12 @@ You can open multiple files at once with vim from the command line using
 wildcards such as `vi *.txt`. By default, this does not open each file in a
 separate tab, and instead you can move from one file to the next with :n or :N.
 You can also use `:tab all` to open each buffer in a separate tab.
+Adding the -p flag from the command line, `vi -p *.txt`, will open each
+file as a separate tab and saves you the step of having to specify `:tab all`.
+Alternatively command-line flags `-o` and `-O` allow you to open the multiple
+files as either vertically or horizontally stacked windows.
 
-You can also read from stdin with vim.  I find this is useful when you
+You can also read from stdin with vim. I find this is useful when you
 want to concatenate a bunch of files together and then edit them.  For
 example `cat *.txt | vi -`.
 
@@ -117,7 +122,8 @@ I haven't used this much, but it allows you to count your keystrokes
 if you're into that sort of thing. Go ahead and try it now!
 
 Once you `:wq` out of vim, you can use `wc -c commands.txt` to count the
-number of characters in the file.  You can also view the file with `vi commands.txt`
+number of characters in the file.  
+You can also view the file with `vi commands.txt`
 
-You can also repeat the commands from the file by using `vi -s commands.txt other_file.txt.`
-but I haven't found a good use for this.
+You can also repeat the commands from the file by using 
+`vi -s commands.txt other_file.txt.` but I haven't found a good use for this.

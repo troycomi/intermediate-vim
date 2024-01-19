@@ -60,7 +60,7 @@ We are going to start with a limited set of vimrc options so we have approximate
 the same minimal, environment.
 
 Some additions may be recommended but this will be a good start. 
-Relative numbering is a great way to assist with multiline commands and jumps, but I've turned it off for now.
+Relative numbering is a great way to assist with multiline commands and jumps.
 If you want to improve your usage of `#j` and other movement commands, I highly
 recommend slowing key repeat and increasing repeat delay in your OS!
 
@@ -69,14 +69,15 @@ To make this your vimrc, first back up your current one (if you have one) with:
 
 ```mv ~/.vimrc ~/.vimrc.bak```
 
-Depending on your OS, you may have a different location for your vimrc or you might not have a ~/.vimrc at all
+Depending on your OS, you may have a different location for your vimrc 
+or you might not have a ~/.vimrc at all
 in which case the `mv` command will fail, which is ok.
 
 next copy the included vimrc to `~/.vimrc` with:
 
 ```cp class_vimrc.txt ~/.vimrc```
 
-After you've made run these two commands, try to open your .vimrc in vim (inception?)
+After you've made run these two commands, try to open your .vimrc in vim 
 and take a look at the different settings
 
 ```vi ~/.vimrc```

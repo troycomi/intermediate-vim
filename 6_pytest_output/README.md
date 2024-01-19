@@ -87,7 +87,9 @@ vip             select the paragraph
 ```
 
 Try out the visual substitute to change tabs to commas 
-by reading in the output with `:r output.tsv`:
+by reading in the output with `:r output.tsv` in the space
+below, then selecting the new block of text with `vip` and
+then running the substitute command:
 ```
 
 ```

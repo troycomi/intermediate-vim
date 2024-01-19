@@ -66,9 +66,16 @@ I won't cover how to install plugins, but when you are ready, the
 and plays well with the `.` command. (use `gx` to go to a url in a file)
 
 ## Registers in general
-Registers are "clipboards" that can be used to store text and macros, for recall later. The unnamed register is `"` so when we copy or delete, the text is stored there. Additionally, however, there is a register `0` that specifically stores the last yank, and register `1` stores the most recent delete.
+Registers are "clipboards" that can be used to store text and macros,
+for recall later. The unnamed register is `"` so when we copy or delete,
+the text is stored there. Additionally, however, there is a register `0`
+that specifically stores the last yank, and register `1` stores the most
+recent delete.
 
-You can see what is currently stored in your registers with `:reg`. You can yank a line to specifically to register with `a` with `"ayy`, try it on the line below and then check the registers again.
+You can see what is currently stored in your registers with `:reg`.
+You can yank a line to specifically to register with `a` with `"ayy`,
+try it on the line below and then check the registers again.
+
 ```
 Text in register A!
 ```

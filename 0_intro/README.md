@@ -255,7 +255,8 @@ abbreviate const public static final int
 
 ### Extra moving and editing exercises
 
-Here are some additional exercises that you can use to practice the movement and operator commands introduced above.
+Here are some additional exercises that you can use to practice the movement 
+and operator commands introduced above.
 
 > __Exercise 10__: 
 >
@@ -265,7 +266,11 @@ Here are some additional exercises that you can use to practice the movement and
 > } #delete this comment using % to move between brackets
 
 
-> __Exercise 11__: `my_var` is accidentally being overwritten on the third line below. Position your cursor over `my_var` on the first line then use `#` to search for the next occurrence of `my_var`. Delete the line that overwrites `my_var` using `dd`.
+> __Exercise 11__: 
+> `my_var` is accidentally being overwritten on the third line below.
+> Position your cursor over `my_var` on the first line then use `#` 
+> to search for the next occurrence of `my_var`.
+> Delete the line that overwrites `my_var` using `dd`.
 > 
 >     my_var = 17
 >     other_var = 3
@@ -279,10 +284,12 @@ Here are some additional exercises that you can use to practice the movement and
 > that would make the lines easier to read
 > and it shouldn't be too hard to do by yanking the empty line
 > pasting it where required and then moving down to the next line
-> and finally using the dot commadand `.` to repeat it as much
+> and finally using the dot command `.` to repeat it as much
 > as is necessary to get it all done
 
-> __Exercise 13__: Sometimes I'll have a shell command in a `.sh` file that is really long like this one:
+> __Exercise 13__: 
+> Sometimes I'll have a shell command in a `.sh` file that is 
+> really long like this one:
 > 
 > samtools view -f 3 -F 3584 -L chr1.bed -o filtered_reads.sam -U removed_reads.sam mouse_reads.bam
 > 

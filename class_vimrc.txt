@@ -19,8 +19,8 @@ set incsearch               "highlight while typing
 
 set hidden                  "allow modified buffers to hide
 
-set number                  "Display line numbers incrementing
-"set number relativenumber  "Display line numbers in relative positions
+set number relativenumber   "Display line numbers in relative positions
+"set number                 "Display line numbers incrementing
 set nowrap                  "Do not wrap long lines
 
 "Uncomment the next 4 lines to disable the arrow-keys if you'd like

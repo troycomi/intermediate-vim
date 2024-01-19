@@ -20,7 +20,8 @@ or `c` to change it, just like in normal mode.
 
 ## Introducing visual line mode
 
-Visual line mode is similar to visual mode, but selects whole lines at a time. That's pretty much it. You can enter visual line mode with `V` in normal mode.
+Visual line mode is similar to visual mode, but selects whole lines at a time.
+That's pretty much it. You can enter visual line mode with `V` in normal mode.
 
 > __Exercise 2__:
 >
@@ -38,7 +39,10 @@ Visual line mode is similar to visual mode, but selects whole lines at a time. T
 
 ## Introducing visual block mode
 
-Visual block mode is similar to visual mode, but selects a rectangular block of text. You can enter visual block mode with `C-v` in normal mode. You can then move the cursor around to select text. You can even use `o` to take control of the opposite corner of the block.
+Visual block mode is similar to visual mode, but selects a rectangular block of text.
+You can enter visual block mode with `C-v` in normal mode.
+You can then move the cursor around to select text.
+You can even use `o` to take control of the opposite corner of the block.
 
     Exercise 3:
 
