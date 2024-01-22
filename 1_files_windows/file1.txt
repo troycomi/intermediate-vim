@@ -1,1 +1,16 @@
-file 1
+welcome to file1.txt!
+
+if you got here from following the directions in the README.md
+then you should have two tabs. 
+
+This isn't a large file, but let's pretend we wanted a vertical
+split window for some reason. We can do C-wv. Then we can switch
+to the new window on the right with C-wl.
+
+Now try switching back to the README.md tab by using gt (next tab)
+(go ahead and do that now)
+
+Ok, you should be back here again. I think that's enough messing around.
+
+Let's clean up the windows here with C-wo and then let's clean up this tab
+by just using :q as normal

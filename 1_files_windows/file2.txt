@@ -1,1 +1,6 @@
-file 2
+Welcome to file 2
+
+If you got here by following the directions from the README then you should have
+a horizontally split of two windows with two different file buffers open
+
+You can close this window with :q

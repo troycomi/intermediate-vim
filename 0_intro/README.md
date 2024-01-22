@@ -30,13 +30,27 @@ h,j,k,l     move cursor by one space
 w,e,b       move by a word
 t,f         move forward to a character
 n,;,,       move to a search or character match
+*           search for the word under the cursor forwards
 ```
 Shift with each of these produces a similar movement
 ```
 W,E,B       move by a WORD
 T,F         move backward to a character
 N           move to a search backwards
+#           search for the word under the cursor backwards
 ```
+
+> __Exercise 1__:
+> Try putting your cursor here [x] and then move to here [y]
+
+> __Exercise 2__: 
+> Try to get here [y] starting from here [x]
+
+> __Exercise 3__: 
+> What if you started here [x] and
+> somehow needed to make your way
+> all the way towards the end of this line to get here [y]?
+
 Moves can also be much larger
 ```
 }               move to the next blank line
@@ -81,6 +95,22 @@ y           yank
 p           paste (or put)
 ```
 
+> __Exercise 4__:
+>
+>    Fx the typo on this line by going into insert mode
+>
+>    Fixx the typo on this line using x
+>
+>    Fix this line by adding the missing lette
+
+Undoing and redoing are very common operations
+```
+u           undo
+C-r         redo
+```
+
+> __Exercise 5__: Undo the previous change you made then redo it
+
 Each operator can be combined with a movement to act exactly where you need,
 for example, here are some delete variants:
 ```
@@ -108,6 +138,14 @@ d3w         delete 3 words
 3p          put the register contents 3 times
 ```
 
+> __Exercise 6__:
+>
+> Delete the next 3 words VIM IS LAME to fix this line
+>
+> This line is lame too, you should probably delete it
+>
+> But this line is great, in fact you should yank and paste it
+
 Instead of a motion, you can use a search command or text objects.  Text objects
 are represented by `i` or `a` and the surrounding object
 ```
@@ -120,6 +158,12 @@ c/cat<enter>    change to the first instance of "cat"
 You don't even need to be on the object, just in front of it or on the same line!
 So `ci"` can replace `f"lct"`.  As a bonus, text objects work better with the dot
 command.
+
+> __Exercise 7__:
+>
+> Translate the quoted word to english "hola"
+>
+> This function should take arguments: def foo(bar, baz)
 
 Some meta-commands are just handy enough they become muscle memory:
 ```
@@ -182,45 +226,16 @@ craft operations faster the breakpoint for using a macro or regex will shift.
 My cutoff is around 10 repetitions; just be aware that there are always better
 ways, but they may be slower the first time you have to look it up!
 
-## Your new .vimrc
+> __Exercise 8__:
+> 
+> Try removing the extraaaaaa using x a few times and then undoing it
+> 
+> Now try removing the extra using de and then undoing it
 
-We are going to start with a limited set of vimrc options so we have approximately
-the same minimal, environment
-```vim
-"~/.vimrc
-set nocompatible              " be iMproved, required
-filetype plugin indent on     " required
-set laststatus=2              " Always show the statusline
-syntax on                     " syntax highlighting
+> __Exercise 9__:
+>     DeleTe eveRy worD on This liNe that haS A capital leTter
 
-" highly recommend getting a better colorscheme too!
-set background=dark
-colorscheme default
-
-set expandtab               "Insert spaces instead of tabs in insert mode. Use spaces for indents
-set tabstop=4               "Number of spaces that a <Tab> in the file counts for
-set shiftwidth=4            "Number of spaces to use for each step of (auto)indent
-set autoindent              "Always set auto-indenting on"
-
-set hlsearch                "highlight search matches
-set incsearch               "highlight while typing
-
-set hidden                  "allow modified buffers to hide
-
-set number relativenumber   "Display line numbers
-set nowrap                  "Do not wrap long lines
-nnoremap <Up> <Nop>
-nnoremap <Down> <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Left> <Nop>
-```
-Some additions may be recommended but this will be a good start.  Relative
-numbering is a great way to assist with multiline commands and jumps.
-
-If you want to improve your usage of `#j` and other movement commands, I highly
-recommend slowing key repeat and increasing repeat delay in your OS!
-
-### Adding common abbreviations
+### Adding common abbreviations to your .vimrc
 Another handy collection of commands to add to your vimrc are are abbreviations.
 In insert mode, you can use abbreviations as substitutions for long phrases,
 common misspellings, or frequent code constructs.  Note that if you want to use
@@ -230,8 +245,60 @@ to fill in parts of the expanded text, e.g. function name, arguments, etc.
 
 Here are some example abbreviations for your vimrc:
 ```vim
-abbreviate teh the  " common misspelling
+" common misspelling
+abbreviate teh the
+
 " long or common phrases
 abbreviate PUaddr Princeton University. Princeton, NJ 08544
 abbreviate const public static final int
 ```
+
+### Extra moving and editing exercises
+
+Here are some additional exercises that you can use to practice the movement 
+and operator commands introduced above.
+
+> __Exercise 10__: 
+>
+> python_dict = {
+>     'a': 1,
+>     'b': 3,
+> } #delete this comment using % to move between brackets
+
+
+> __Exercise 11__: 
+> `my_var` is accidentally being overwritten on the third line below.
+> Position your cursor over `my_var` on the first line then use `#` 
+> to search for the next occurrence of `my_var`.
+> Delete the line that overwrites `my_var` using `dd`.
+> 
+>     my_var = 17
+>     other_var = 3
+>     my_var = 'oops I shouldnt be overwriting this'
+
+> __Exercise 12__:
+> This line and the next line are separated by an empty line
+> 
+> It's true, there's an empty line above.
+> It would be nice if all the other lines also had a separating line
+> that would make the lines easier to read
+> and it shouldn't be too hard to do by yanking the empty line
+> pasting it where required and then moving down to the next line
+> and finally using the dot command `.` to repeat it as much
+> as is necessary to get it all done
+
+> __Exercise 13__: 
+> Sometimes I'll have a shell command in a `.sh` file that is 
+> really long like this one:
+> 
+> samtools view -f 3 -F 3584 -L chr1.bed -o filtered_reads.sam -U removed_reads.sam mouse_reads.bam
+> 
+> but it would be much nicer if it were broken up into multiple lines like this:
+>
+> samtools view \
+>   -f 3 \
+>   -F 3584 \
+>   -L chr1.bed \
+>   -o filtered_reads.sam \
+>   -U removed_reads.sam \
+>   mouse_reads.bam

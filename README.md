@@ -1,3 +1,5 @@
+Open this file in vi then follow along by using `j` to move down.
+
 # Intermediate vim
 
 Vim is one of my favorite tools, which is an odd thing to write about a text
@@ -50,11 +52,35 @@ You need to have vim installed.  While there shouldn't be any version-specific
 information, we will be using vim, version 8, which is installed on most RC
 systems.
 
-First, if you have a `.vimrc`, move it so we can all start fresh:
-```
-mv ~/.vimrc ~/.vimrc.bak
-```
-We will cover a basic config in the next section
+
+# Setting up your new .vimrc
+
+Your ~/.vimrc file is where you can add personal configurations to vim.
+We are going to start with a limited set of vimrc options so we have approximately
+the same minimal, environment.
+
+Some additions may be recommended but this will be a good start. 
+Relative numbering is a great way to assist with multiline commands and jumps.
+If you want to improve your usage of `#j` and other movement commands, I highly
+recommend slowing key repeat and increasing repeat delay in your OS!
+
+
+To make this your vimrc, first back up your current one (if you have one) with:
+
+```mv ~/.vimrc ~/.vimrc.bak```
+
+Depending on your OS, you may have a different location for your vimrc 
+or you might not have a ~/.vimrc at all
+in which case the `mv` command will fail, which is ok.
+
+next copy the included vimrc to `~/.vimrc` with:
+
+```cp class_vimrc.txt ~/.vimrc```
+
+After you've made run these two commands, try to open your .vimrc in vim 
+and take a look at the different settings
+
+```vi ~/.vimrc```
 
 ## Contents
 
@@ -62,3 +88,4 @@ After covering some basics, we will work through several example editing tasks
 to introduce solutions at several levels.  Often, the fastest way to edit a
 single line is not the fastest to edit 10 lines and a different solution is
 required for 1000 lines.
+

@@ -34,7 +34,7 @@ In this case, `&` will only replay the last s command.  You can use `@:` instead
 to repeat the entire ex command.  Not the simplest for one line, but if you
 needed it several times you get some time savings.
 
-## Registers
+## Using registers to change surrounding characters
 Finally, we can use yank and delete to replace the surrounding characters.
 This uses some tricky details about yank and delete registers, so we will go
 slow the first time and focus on `'apple'`:
@@ -43,6 +43,7 @@ yi'                 yank the contents of the single quotes to register " and 0
 ca'                 change the contents of single quotes and the quotes, replace "
 "C-r0"              use the yank register to recall in insert mode
 ```
+
 You can save that to a macro for replay as well.  The same method works for other
 braces, but you need a different macro for each.
 Macros can be saved into your vimrc so they are always available at startup.
@@ -53,12 +54,38 @@ let @b="yi[ca[{0}"
 I think this is best used for the last example:
 ```
 f:
-dE
+ce
 `C-r"`
 ```
 Here we can use the unnamed register as there are no existing quotes.
 
-## Plugin
+
+## vim-surround plugin
 I won't cover how to install plugins, but when you are ready, the
 [vim-surround](https://github.com/tpope/vim-surround) plugin solves this nicely
 and plays well with the `.` command. (use `gx` to go to a url in a file)
+
+## Registers in general
+Registers are "clipboards" that can be used to store text and macros,
+for recall later. The unnamed register is `"` so when we copy or delete,
+the text is stored there. Additionally, however, there is a register `0`
+that specifically stores the last yank, and register `1` stores the most
+recent delete.
+
+You can see what is currently stored in your registers with `:reg`.
+You can yank a line to specifically to register with `a` with `"ayy`,
+try it on the line below and then check the registers again.
+
+```
+Text in register A!
+```
+
+Then you can paste specifically from register `a` with `"ap`:
+```
+Before you paste on the line below using the `a` register,
+copy one of these line into the unnamed register with `yy`
+as normal and then check the registers with `:reg`
+
+paste with "ap below from normal mode, OR `C-ra` from insert mode
+
+```

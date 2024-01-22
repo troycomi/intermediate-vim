@@ -60,6 +60,13 @@ cgn,<esc>       replace next match with a comma
 ....            repeat as needed
 ```
 
+Try out `gn` to change tabs to commas on the output.tsv 
+by reading it in below with `:r output.tsv`:
+```
+
+```
+
+
 I wouldn't do that in practice, but `gn` may be handy some day!
 
 #### substitute
@@ -75,9 +82,18 @@ performing the replacement.
 
 Overall we have
 ```
-vi(             select in parenthesis
+vip             select the paragraph
 :s/\t/,/gc      substitute each tab for comma and ask first
 ```
+
+Try out the visual substitute to change tabs to commas 
+by reading in the output with `:r output.tsv` in the space
+below, then selecting the new block of text with `vip` and
+then running the substitute command:
+```
+
+```
+
 The final result is the same as `gn` but you are able to examine the result
 *before* running the command instead of afterwards.  That can be handy over
 multiple lines but in this case I would probably skip the `c` flag altogether.
@@ -97,6 +113,12 @@ A more complex substitute command works on the entire line:
 Here we match the entire line (`.*`) then use `\0` to recall the contents.  This
 prevents the need to specify the range as vim automatically fills in when you
 press `:` from visual mode.
+
+Add single-quotes around the lines
+by first reading in the output with `:r output.tsv`:
+```
+
+```
 
 #### Manual to macro
 Instead of substitute, we can use `I'<esc>` and `A\n'<esc>` to add in the characters.
@@ -203,3 +225,4 @@ A few ideas:
  - copy in parenthesis
  - substitute to make newlines
  - block edit or substitute for modifying keys
+

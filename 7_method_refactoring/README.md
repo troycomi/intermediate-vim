@@ -43,11 +43,13 @@ and took me about 2 minutes
 
 On your marks, get set, go!
 ```python
+
 def fact(n):
    myResult = 1
    theValues = list(range(n))
-   for i in range(len(theValues)):
+   for i in range(self.n):
       nextVal = theValues[i]
       myResult = myResult * nextVal
    return myResult
+
 ```

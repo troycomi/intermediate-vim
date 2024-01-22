@@ -1,1 +1,11 @@
-subdir 1
+Welcome to file 1 in subdir 1
+
+If you loaded this file following the directions in the
+README.md then you now have at least two buffers open.
+
+You can see what they are by typing :ls
+
+You can use C-o to jump back to the README.md buffer
+Followed by C-i to jump back to this subdir/file1.txt buffer
+
+When you're done with this buffer you can use :bd to close it

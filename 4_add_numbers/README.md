@@ -41,13 +41,27 @@ gv      Reselect bloc visual
 move to the second entry
 gC-a    increment as a counter
 ```
-Try it!
+Try it below!
 
 Of note with `C-a`, the cursor will move to the first number on the line. `C-x`
 decrements and you can add a count to do some simple math (2+3 -> 2 `3C-a`).
 If you need more math operations, you can use `C-r=` to evaluate simple operations
 and vim expressions.
 
+```
+ - Iron Man                            
+ - The Incredible Hulk                 
+ - Iron Man 2                          
+ - Thor                                
+ - Captain America: The First Avenger  
+ - The Avengers                        
+ - Iron Man 3                          
+ - Thor: The Dark World                
+ - Captain America: The Winter Soldier 
+ - Guardians of the Galaxy             
+ - Avengers: Age of Ultron             
+```
+                                      
 ## Copy with increment
 When writing unit tests, I will sometimes have to assert the value of a list
 of values, such as:
@@ -62,7 +76,13 @@ A nice macro for the job is `qqyypC-aq`, that is yank, put and increment.
 The value of this approach is it's easy to make X copies by running `X@q`.
 If each line builds on the last, you alternate `@q`, edit, repeat.  The downside
 is it only increments the first number in each line.
-You can add it to your `.vimrc`:
+
+Try it starting with this line
+```python
+assert line[0] == "blah"
+```
+
+If you end up using this macro often you can add it to your `.vimrc`:
 ```vim
 let @i='yyp'  " the missing character is C-a.  To add in, use C-vC-a.
 ```
@@ -74,4 +94,8 @@ make however many copies you want, then block select the numbers and `gC-a`.
 The advantage is it doesn't occupy a register and you can increment anywhere
 in the line.  Things are more challenging if each line builds on the last.
 
-Try one method to fill in the missing assert lines.
+Try this method out here:
+```python
+assert line[0] == "blah"
+```
+
