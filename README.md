@@ -1,4 +1,4 @@
-Open this file in vi then follow along by using `j` to move down.
+Open this file in vi then follow along by using `j` to move the cursor down.
 
 # Intermediate vim
 
@@ -88,4 +88,6 @@ After covering some basics, we will work through several example editing tasks
 to introduce solutions at several levels.  Often, the fastest way to edit a
 single line is not the fastest to edit 10 lines and a different solution is
 required for 1000 lines.
+
+Now let's go to the next section with `cd 0_intro/` and then `vim README.md`
 

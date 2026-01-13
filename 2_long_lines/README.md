@@ -8,7 +8,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > __Pop quiz__
 >
-> How can we move the cursor to the end of this long line?
+> How can we move the cursor to the end of the long line above?
 >
 > Once you are there, how can you move to the beginning of the line?
 >
@@ -81,7 +81,6 @@ We want to match the first 80 characters then add a newline, try:
 ```
 :s/^\(.\{1,80}\) /\1^M/
 ```
-
 This substitute command greedily matches any character between 1 and 80 times
 from the start of the current line followed by a space. The paren's 
 are a capture group the is stored in the `\1` and the ^M is a carriage return. 
@@ -97,4 +96,29 @@ Can you quess what will happen if you repeat the substitute command on the same
 line twice?
 
 Try this again yourself on another copy!
+
+## Registers in general
+Registers are "clipboards" that can be used to store text and macros,
+for recall later. The unnamed register is `"` so when we copy or delete,
+the text is stored there. Additionally, however, there is a register `0`
+that specifically stores the last yank, and register `1` stores the most
+recent delete.
+
+You can see what is currently stored in your registers with `:reg`.
+You can yank a line to specifically to register with `a` with `"ayy`,
+try it on the line below and then check the registers again.
+
+```
+Text in register A!
+```
+
+Then you can paste specifically from register `a` with `"ap`:
+```
+Before you paste on the line below using the `a` register,
+copy one of these line into the unnamed register with `yy`
+as normal and then check the registers with `:reg`
+
+paste with "ap below from normal mode, OR `C-ra` from insert mode
+
+```
 

@@ -64,28 +64,3 @@ Here we can use the unnamed register as there are no existing quotes.
 I won't cover how to install plugins, but when you are ready, the
 [vim-surround](https://github.com/tpope/vim-surround) plugin solves this nicely
 and plays well with the `.` command. (use `gx` to go to a url in a file)
-
-## Registers in general
-Registers are "clipboards" that can be used to store text and macros,
-for recall later. The unnamed register is `"` so when we copy or delete,
-the text is stored there. Additionally, however, there is a register `0`
-that specifically stores the last yank, and register `1` stores the most
-recent delete.
-
-You can see what is currently stored in your registers with `:reg`.
-You can yank a line to specifically to register with `a` with `"ayy`,
-try it on the line below and then check the registers again.
-
-```
-Text in register A!
-```
-
-Then you can paste specifically from register `a` with `"ap`:
-```
-Before you paste on the line below using the `a` register,
-copy one of these line into the unnamed register with `yy`
-as normal and then check the registers with `:reg`
-
-paste with "ap below from normal mode, OR `C-ra` from insert mode
-
-```

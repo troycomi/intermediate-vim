@@ -34,3 +34,12 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 
 "Type jk in succession to go from insert to normal mode (to avoid ESC)
 ":imap jk <Esc>
+
+"Clear search highlighting with Ctrl+L from normal mode
+"nnoremap <nowait><silent> <C-L> :noh<CR>
+
+"Color column 80 as a visual guide
+":let &colorcolumn=80
+
+" Abbreviation example
+abbreviate PUaddr Princeton University. Princeton, NJ 08544

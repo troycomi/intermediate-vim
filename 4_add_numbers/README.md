@@ -37,8 +37,10 @@ Here are the steps
 ```
 C-v     select bullet points
 c1)     Replace with 1)
+<ESC>   Back to normal mode
 gv      Reselect bloc visual
-move to the second entry
+o       Move active cursor to the other side
+j       To move the cursor to the second entry
 gC-a    increment as a counter
 ```
 Try it below!

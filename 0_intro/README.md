@@ -7,9 +7,11 @@ every other editor you use, when you type a character the letter appears.  Some
 hotkeys are available with control or alt, but mostly you move with the mouse
 or arrows and then you type.
 
-In vim, what a character does depends on the context, and most importantly, the
+In vim, what a key-press does depends on the context, and most importantly, the
 mode.  The most important modes are:
- - normal: how vim starts and allows for navigation and sending commands
+ - normal: allows for navigation and sending commands.
+           This is the initial mode you're dropped into
+           when you open a file. We're in it now!
  - insert: typing
  - visual: highlighting regions to edit
  - command: writing ex commands
@@ -34,19 +36,19 @@ n,;,,       move to a search or character match
 ```
 Shift with each of these produces a similar movement
 ```
-W,E,B       move by a WORD
+W,E,B       move by a WORD e.g this-is-a-WORD (try w vs. W)
 T,F         move backward to a character
 N           move to a search backwards
 #           search for the word under the cursor backwards
 ```
 
-> __Exercise 1__:
+> __Exercise: navigate-between-markers__:
 > Try putting your cursor here [x] and then move to here [y]
 
-> __Exercise 2__: 
+> __Exercise: navigate-between-markers-2__:
 > Try to get here [y] starting from here [x]
 
-> __Exercise 3__: 
+> __Exercise: multi-line-navigation__:
 > What if you started here [x] and
 > somehow needed to make your way
 > all the way towards the end of this line to get here [y]?
@@ -57,8 +59,8 @@ Moves can also be much larger
 gg,G            move to start,end of file
 <#>g            move to line #
 C-f,C-u         move down,up by a screen
-C-e,C-y         move down,up one line
-C-o,C-i         jump backward,forward
+C-e,C-y         move screen down,up one line
+C-o,C-i         jump backward,forward through cursor history
 m<c>,`<c>       mark location as `c`, recall it
 %               move between matching (,[,{,",'
 z[z,-,enter]    move window so curser is in the middle, bottom, top
@@ -95,7 +97,7 @@ y           yank
 p           paste (or put)
 ```
 
-> __Exercise 4__:
+> __Exercise: normal-insert-mode-fix-typos__:
 >
 >    Fx the typo on this line by going into insert mode
 >
@@ -109,7 +111,7 @@ u           undo
 C-r         redo
 ```
 
-> __Exercise 5__: Undo the previous change you made then redo it
+> __Exercise: undo-redo__: Undo the previous change you made then redo it
 
 Each operator can be combined with a movement to act exactly where you need,
 for example, here are some delete variants:
@@ -138,13 +140,18 @@ d3w         delete 3 words
 3p          put the register contents 3 times
 ```
 
-> __Exercise 6__:
+> __Exercise: combine-count-and-motion-delete__:
 >
 > Delete the next 3 words VIM IS LAME to fix this line
 >
-> This line is lame too, you should probably delete it
+> This entire line is lame too, you should probably delete it
 >
 > But this line is great, in fact you should yank and paste it
+>
+> Starting here [x], see if you can delete this entire line and the next
+> two lines with the same command.
+> (Hint you can try modifying `dd` or `j`)
+> DONT DELETE ME
 
 Instead of a motion, you can use a search command or text objects.  Text objects
 are represented by `i` or `a` and the surrounding object
@@ -159,11 +166,13 @@ You don't even need to be on the object, just in front of it or on the same line
 So `ci"` can replace `f"lct"`.  As a bonus, text objects work better with the dot
 command.
 
-> __Exercise 7__:
+> __Exercise: text-objects-in-quotes__:
 >
 > Translate the quoted word to english "hola"
 >
-> This function should take arguments: def foo(bar, baz)
+> This function should NOT take arguments
+> def foo(bar, baz):
+>     print("Hello World!")
 
 Some meta-commands are just handy enough they become muscle memory:
 ```
@@ -193,7 +202,22 @@ little you miss having a caps lock option!
 The dot command will replay the last operation you performed.  That may seem like
 a silly thing to do, but using the dot command effectively will drastically improve
 your efficiency.  Often times in development, you need to perform the same edit
-throughout a file or function.  There are 3 parts to effective dot usage:
+throughout a file or function.
+
+
+> __Exercise: dot-delete-quotes-with-text-objects__:
+> The following lines have incorrect historical quotes,
+> I'm not sure what the correct quotes are, but as a
+> first step lets just delete what's in the quotes
+> to avoid any future issues
+>
+> Abe Lincoln - "Don't trust everything you see on the internet"
+> Ruth Bader Ginsburg - "The executive and legaslative branches are the best"
+> Shia LaBeouf - "It's time to stop pursuing your dreams"
+
+
+
+There are 3 parts to effective dot usage:
 
 ### Make edits in a repeatable way
 
@@ -207,6 +231,17 @@ the number of words to delete.
 
 Get in the habit of making small changes, repeating as needed with dot, and undoing
 if you go too far.  It uses more key strokes but it uses much less mental load.
+
+> __Exercise: dot-append-trademarks__:
+> Each of the Trademarked items indicated by * should have a (Tm) added to the end
+>
+> Oreos*
+> Earth
+> Gatorade*
+> Powerade*
+> Wind
+> Fire
+> Earth Wind and Fire*
 
 ### Rapid fire dot
 
@@ -226,14 +261,15 @@ craft operations faster the breakpoint for using a macro or regex will shift.
 My cutoff is around 10 repetitions; just be aware that there are always better
 ways, but they may be slower the first time you have to look it up!
 
-> __Exercise 8__:
-> 
+> __Exercise: compare-x-vs-de-for-undoability__:
+>
 > Try removing the extraaaaaa using x a few times and then undoing it
-> 
+>
 > Now try removing the extra using de and then undoing it
 
-> __Exercise 9__:
->     DeleTe eveRy worD on This liNe that haS A capital leTter
+> __Exercise: dot-delete-move-skip-words__:
+>     DeleTe every worD on This liNe that haS A capital leTter
+>     (Hint: repeat dw with . and skip words with w)
 
 ### Adding common abbreviations to your .vimrc
 Another handy collection of commands to add to your vimrc are are abbreviations.
@@ -245,12 +281,11 @@ to fill in parts of the expanded text, e.g. function name, arguments, etc.
 
 Here are some example abbreviations for your vimrc:
 ```vim
+" long or common phrases (this is in the class .vimrc)
+abbreviate PUaddr Princeton University. Princeton, NJ 08544
+
 " common misspelling
 abbreviate teh the
-
-" long or common phrases
-abbreviate PUaddr Princeton University. Princeton, NJ 08544
-abbreviate const public static final int
 ```
 
 ### Extra moving and editing exercises
@@ -258,7 +293,7 @@ abbreviate const public static final int
 Here are some additional exercises that you can use to practice the movement 
 and operator commands introduced above.
 
-> __Exercise 10__: 
+> __Exercise: percent-match-brackets__:
 >
 > python_dict = {
 >     'a': 1,
@@ -266,20 +301,21 @@ and operator commands introduced above.
 > } #delete this comment using % to move between brackets
 
 
-> __Exercise 11__: 
+> __Exercise: star-search-and-delete__:
 > `my_var` is accidentally being overwritten on the third line below.
-> Position your cursor over `my_var` on the first line then use `#` 
+> Position your cursor over `my_var` on the first line then use `*`
 > to search for the next occurrence of `my_var`.
 > Delete the line that overwrites `my_var` using `dd`.
-> 
+>
 >     my_var = 17
 >     other_var = 3
 >     my_var = 'oops I shouldnt be overwriting this'
 
-> __Exercise 12__:
+> __Exercise: yank-paste-dot__:
 > This line and the next line are separated by an empty line
-> 
+>
 > It's true, there's an empty line above.
+>
 > It would be nice if all the other lines also had a separating line
 > that would make the lines easier to read
 > and it shouldn't be too hard to do by yanking the empty line
@@ -287,13 +323,13 @@ and operator commands introduced above.
 > and finally using the dot command `.` to repeat it as much
 > as is necessary to get it all done
 
-> __Exercise 13__: 
-> Sometimes I'll have a shell command in a `.sh` file that is 
+> __Exercise: break-long-line-with-dot__:
+> Sometimes I'll have a shell command in a `.sh` file that is
 > really long like this one:
-> 
+>
 > samtools view -f 3 -F 3584 -L chr1.bed -o filtered_reads.sam -U removed_reads.sam mouse_reads.bam
-> 
-> but it would be much nicer if it were broken up into multiple lines like this:
+>
+> but it would be nicer to read if it were broken up into multiple lines like this:
 >
 > samtools view \
 >   -f 3 \
@@ -302,3 +338,11 @@ and operator commands introduced above.
 >   -o filtered_reads.sam \
 >   -U removed_reads.sam \
 >   mouse_reads.bam
+>
+> I would do this with a combination of "forward to space"
+> followed by typing the \, going to the next line with enter
+> then going back to normal mode, and using `;` to repeat the movement
+> twice, then `.` to repeat the next line, indenting etc.
+> might need to do a final indenting
+>
+> after the first line, this becomes `;;.;;.;;.`
